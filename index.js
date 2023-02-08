@@ -50,7 +50,7 @@ app.post("/", (req, res) => {
       }
     )
     .then((response) => res.json(response.data))
-    .catch((err) => res.status(500).send(err));
+    .catch((err) => {console.log("Error Occured", err); res.status(500).send(err)});
 });
 
 app.listen(PORT, (error) => {
